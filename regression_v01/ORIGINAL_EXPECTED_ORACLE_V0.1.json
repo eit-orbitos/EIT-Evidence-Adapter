@@ -1,0 +1,167 @@
+{
+  "scope": "independent precommitted behavioral tests of exact adapter candidate; not original Analyzer or Bridge scientific verification",
+  "candidate_zip_sha256": "90e9b392b973c167e16f94c109b9f6349349e3924b27e0b64b06fb35d1928e62",
+  "candidate_adapter_source_sha256": "74eb41464cda6cc14a92c34b44e9d7cd55151d13c481552112aa883c0c88983e",
+  "cases": [
+    {
+      "id": "K01",
+      "intent": "JSON valid object",
+      "expected": "ACCEPT"
+    },
+    {
+      "id": "K02",
+      "intent": "Duplicate JSON key at root",
+      "expected": "REJECT:DUPLICATE_JSON_KEY"
+    },
+    {
+      "id": "K03",
+      "intent": "Duplicate JSON key nested",
+      "expected": "REJECT:DUPLICATE_JSON_KEY"
+    },
+    {
+      "id": "K04",
+      "intent": "Invalid UTF-8",
+      "expected": "REJECT:INVALID_UTF8"
+    },
+    {
+      "id": "K05",
+      "intent": "Nonfinite NaN",
+      "expected": "REJECT:NON_FINITE_JSON_CONSTANT:NaN"
+    },
+    {
+      "id": "K06",
+      "intent": "Nonfinite exponent overflow 1e309",
+      "expected": "REJECT:NON_FINITE_JSON_NUMBER"
+    },
+    {
+      "id": "K07",
+      "intent": "Python JSON integer > 4300 digits",
+      "expected": "REJECT:INVALID_JSON"
+    },
+    {
+      "id": "K08",
+      "intent": "Top-level array forbidden",
+      "expected": "REJECT:EXPECTED_JSON_OBJECT"
+    },
+    {
+      "id": "K09",
+      "intent": "JSON input byte limit",
+      "expected": "REJECT:JSON_BYTE_LIMIT"
+    },
+    {
+      "id": "K10",
+      "intent": "Nested JSON depth limit",
+      "expected": "REJECT:JSON_DEPTH_LIMIT"
+    },
+    {
+      "id": "K11",
+      "intent": "Safe 2-entry ZIP inventory",
+      "expected": "ZIP_COUNT:2"
+    },
+    {
+      "id": "K12",
+      "intent": "ZIP ../ traversal",
+      "expected": "REJECT:UNSAFE_ZIP_MEMBER_PATH"
+    },
+    {
+      "id": "K13",
+      "intent": "ZIP absolute path",
+      "expected": "REJECT:UNSAFE_ZIP_MEMBER_PATH"
+    },
+    {
+      "id": "K14",
+      "intent": "ZIP backslash path",
+      "expected": "REJECT:UNSAFE_ZIP_MEMBER_PATH"
+    },
+    {
+      "id": "K15",
+      "intent": "ZIP Unicode NFC pathname collision",
+      "expected": "REJECT:DUPLICATE_ZIP_MEMBER_PATH"
+    },
+    {
+      "id": "K16",
+      "intent": "ZIP same-name duplicate",
+      "expected": "REJECT:DUPLICATE_ZIP_MEMBER_PATH"
+    },
+    {
+      "id": "K17",
+      "intent": "ZIP symlink entry",
+      "expected": "REJECT:UNSAFE_ZIP_MEMBER_TYPE"
+    },
+    {
+      "id": "K18",
+      "intent": "ZIP unsupported compression",
+      "expected": "REJECT:UNSUPPORTED_ZIP_COMPRESSION"
+    },
+    {
+      "id": "K19",
+      "intent": "ZIP more than 256 entries",
+      "expected": "REJECT:ZIP_ENTRY_LIMIT"
+    },
+    {
+      "id": "K20",
+      "intent": "ZIP member exceeding 8 MiB",
+      "expected": "REJECT:ZIP_MEMBER_LIMIT"
+    },
+    {
+      "id": "K21",
+      "intent": "ZIP corrupted CRC",
+      "expected": "REJECT:UNREADABLE_ZIP"
+    },
+    {
+      "id": "K22",
+      "intent": "ZIP Python source not executed",
+      "expected": "ZIP_SAFE_NO_EXEC"
+    },
+    {
+      "id": "K23",
+      "intent": "SHA-256 known match",
+      "expected": "INTEGRITY:MATCH"
+    },
+    {
+      "id": "K24",
+      "intent": "SHA-256 deliberately wrong",
+      "expected": "INTEGRITY:MISMATCH"
+    },
+    {
+      "id": "K25",
+      "intent": "No digest reference not authenticated",
+      "expected": "AUTH_UNKNOWN"
+    },
+    {
+      "id": "K26",
+      "intent": "Invalid digest formatting",
+      "expected": "REJECT:INVALID_EXPECTED_SHA256"
+    },
+    {
+      "id": "K27",
+      "intent": "Malformed JSON blocks audit",
+      "expected": "ASSESSMENT:BLOCKED"
+    },
+    {
+      "id": "K28",
+      "intent": "Digest mismatch blocks audit",
+      "expected": "ASSESSMENT:BLOCKED"
+    },
+    {
+      "id": "K29",
+      "intent": "Genius G4 and Program Lang Gate-4 independent",
+      "expected": "GATES_SEPARATE"
+    },
+    {
+      "id": "K30",
+      "intent": "Leaf symlink refused",
+      "expected": "REJECT:INPUT_NOT_REGULAR_FILE"
+    },
+    {
+      "id": "K31",
+      "intent": "Existing report output never overwritten",
+      "expected": "CLI_REFUSES_OVERWRITE"
+    },
+    {
+      "id": "K32",
+      "intent": "ZIP member hashing not origin authentication",
+      "expected": "ZIP_AUTH_NOT_ESTABLISHED"
+    }
+  ]
+}
