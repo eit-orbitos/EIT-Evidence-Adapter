@@ -1,0 +1,13 @@
+{
+  "addendum_version": "0.2.4",
+  "status": "SUPPLEMENTARY_LOCAL_CANDIDATE_NOT_INDEPENDENTLY_VERIFIED",
+  "historical_oracle_unchanged": true,
+  "original_oracle_test_sha256": "33c93a812c483a906e031983c6614db243aba25e41072847518d079b05ea4b58",
+  "updated_test_file": "tests/test_v023_boundary.py",
+  "updated_test_file_sha256": "bd092cce10d0f8a21c28ae03823b286600f4b963585d740c24854474cb382573",
+  "reason": "V0.2.4 adds sys.path insert and Y10; existing Y01-Y09 test expectations remain unchanged.",
+  "expectations_created_before_source_patch": false,
+  "external_timestamp_proof": false,
+  "new_test": "Y10_ZIP64_LOCATOR_REASON_CODE",
+  "expected_reason": "UNSUPPORTED_ZIP64"
+}

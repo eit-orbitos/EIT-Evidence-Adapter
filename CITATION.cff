@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Please cite EIT Analyzer Lambda — Evidence Adapter when using this software."
 type: software
 title: "EIT Analyzer Lambda — Evidence Adapter"
-version: "0.2.3"
+version: "0.2.4"
 authors:
   - family-names: Mladenovski
     given-names: Toni

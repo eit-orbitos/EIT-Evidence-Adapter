@@ -4,13 +4,13 @@
   "files": [
     {
       "path": "CHANGELOG.md",
-      "bytes": 2349,
-      "sha256": "3424ebdd1064b65171cf22539d1bdb971c2f676047c70e87722797833e8a0902"
+      "bytes": 3356,
+      "sha256": "c06ad13d35f24f309ea7d8899979bd0c6a7715aab27ca5c95b571e07ca38aea3"
     },
     {
       "path": "CITATION.cff",
       "bytes": 587,
-      "sha256": "c0b4a4ebddb97bfc8a562371a656d8116ba8af7f5f1be28433bcb27e59dc7099"
+      "sha256": "cd6501b6f5ea215f2ffd58dcb86be5ee9a93f62ae2d3e651c81a5f84c0824ef4"
     },
     {
       "path": "COMMERCIAL-USE-POLICY.md",
@@ -24,13 +24,13 @@
     },
     {
       "path": "LICENSE-DOCUMENTATION.md",
-      "bytes": 609,
-      "sha256": "990bda117ffed37959b13d1f5d059e4fd5f05ac88a7e7e90fd0e4e682da80c6d"
+      "bytes": 612,
+      "sha256": "7310922c54534a005dac7c5fd63e002e0a36d7d02a835b16a017b81c4c838cce"
     },
     {
       "path": "LICENSE-SCOPE.md",
-      "bytes": 1437,
-      "sha256": "61a27a729bd45dc5b963ddda82db47b16d8da99f9bf9f40834fcd391a1eda085"
+      "bytes": 1400,
+      "sha256": "eceba4c5417522a74ae13fad1a464f7afa27ba9e93a1fb67c803ef3aba9bc7ff"
     },
     {
       "path": "NOTICE",
@@ -49,13 +49,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 6518,
-      "sha256": "06d6c02b03777e49373d611c53d69fa4be545ddd7aa18c9cd1f5aedac1033232"
+      "bytes": 6549,
+      "sha256": "e0003115dfee9e3bfcffe3a345b708169937f41acfe2187bf0ca7bef77ad5ce9"
     },
     {
       "path": "REPRO_PROVENANCE.json",
       "bytes": 2328,
       "sha256": "b3bf2d6773ffea627b6cb0bf8aa87536f376f171a8a4dccfc46901e353dd81e6"
+    },
+    {
+      "path": "V024_TEST_HASH_ADDENDUM.json",
+      "bytes": 682,
+      "sha256": "fc35c3a0ce39ea49557c98f74151bae72bd5e92c6d4f6b9070b1e5d0eca7ff27"
     },
     {
       "path": "V277_REUSE_PLAN.md",
@@ -69,8 +74,8 @@
     },
     {
       "path": "evidence_adapter.py",
-      "bytes": 21775,
-      "sha256": "7d19643f872f055215a7b8ce5fc92f937017338a6aa888c2683b779635e2ecfa"
+      "bytes": 22116,
+      "sha256": "f4765cb380ee5bd78e53061a34b9103c37ce85325c935636cbcd2e1c593cb2ef"
     },
     {
       "path": "regression_v01/ORIGINAL_EXPECTED_ORACLE_V0.1.json",
@@ -139,8 +144,8 @@
     },
     {
       "path": "tests/test_v023_boundary.py",
-      "bytes": 3834,
-      "sha256": "33c93a812c483a906e031983c6614db243aba25e41072847518d079b05ea4b58"
+      "bytes": 4309,
+      "sha256": "bd092cce10d0f8a21c28ae03823b286600f4b963585d740c24854474cb382573"
     },
     {
       "path": "tools/run_bounded_stress.py",

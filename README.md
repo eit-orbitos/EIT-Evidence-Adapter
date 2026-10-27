@@ -1,6 +1,6 @@
 # EIT Analyzer Lambda — Evidence Adapter
 
-**Software version: 0.2.3. Python 3.12+; standard library only.**
+**Software version: 0.2.4. Python 3.12+; standard library only.**
 
 Standalone, local, read-only inspection of JSON, text and a bounded ZIP profile. The adapter writes a new documentary JSON report. It does not load or run payloads, does not invoke Analyzer V4.2.1, Bridge, Genius or Program Lang, and never awards scientific PASS or closes a governance gate.
 
@@ -42,6 +42,6 @@ python -B tools/run_frozen_oracle.py --source evidence_adapter.py --expected-sou
 python -B tools/run_bounded_stress.py --source evidence_adapter.py --expected-source-sha256 <exact-source-sha256> --output new_stress_receipt.json
 ```
 
-The original 25 unit tests and original 32-case V0.1 oracle/runner remain unchanged. `test_release_regressions.py` contains the 44 preserved supplemental cases; `test_v023_boundary.py` adds 9 further expectations recorded separately in `ORACLE_V0.3_SECURITY_CASES.json` (prepatch local preparation, without independent timestamp attestation); `ORACLE_V0.2_PREDECLARED.json` binds their intent and exact test bytes. Tests X10/X11 cover integer configuration; X26 replaces the old weak no-execution assertion with a sentinel check; X27 exercises supplied false trust/gate claims and matching/mismatching hash references. The original weak K22/K32 cases are retained as historical regression checks, not promoted as complete proofs.
+The original 25 unit tests and original 32-case V0.1 oracle/runner remain unchanged. `test_release_regressions.py` contains the 44 preserved supplemental cases; `test_v023_boundary.py` adds 9 further expectations recorded separately in `ORACLE_V0.3_SECURITY_CASES.json` (locally prepared and frozen after the v0.2.3 source patch, without independent timestamp attestation); `ORACLE_V0.2_PREDECLARED.json` binds their intent and exact test bytes. Tests X10/X11 cover integer configuration; X26 replaces the old weak no-execution assertion with a sentinel check; X27 exercises supplied false trust/gate claims and matching/mismatching hash references. The original weak K22/K32 cases are retained as historical regression checks, not promoted as complete proofs.
 
 Independent review status and test transcripts belong to a separate evidence handoff. Passing tests does not authorize publication. See LICENSE/NOTICE and LICENSE-SCOPE.md. The publisher personally uploads any final release; no automatic publication code is included.

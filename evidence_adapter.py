@@ -19,7 +19,7 @@ import stat
 import unicodedata
 import zipfile
 
-ADAPTER_VERSION = "0.2.3"
+ADAPTER_VERSION = "0.2.4"
 PRODUCT_NAME = "EIT Analyzer Lambda — Evidence Adapter"
 STATUS_CONSTANTS_AS_OF = "2026-10-26"
 MAX_JSON_INTEGER_DIGITS = 4300
@@ -184,12 +184,18 @@ def _zip_directory_layout(data: bytes):
     archive_offset = cd_start - cd_offset
     if cd_start < 0 or archive_offset < 0:
         raise EvidenceError("UNREADABLE_ZIP")
+    # A ZIP64 locator directly before EOCD denotes an unsupported ZIP64 profile.
+    # Detect before examining any prepended ZIP record signatures.
+    if end >= 20 and data[end - 20:end - 16] == b"PK\x06\x07":
+        raise EvidenceError("UNSUPPORTED_ZIP64")
     # An archived ZIP hidden inside the prefix can make streaming ZIP readers
     # extract one set of members while end-directory readers inventory another.
     # An opaque non-ZIP prefix remains allowed/disclosed by the frozen X24 test.
     # Reject ZIP structural signatures in the prefix, even if their occurrence
     # is not a provably valid archive: this documentary profile is fail-closed.
     prefix = data[:archive_offset]
+    if b"PK\x06\x07" in prefix:
+        raise EvidenceError("UNSUPPORTED_ZIP64")
     if any(signature in prefix for signature in
            (b"PK\x03\x04", b"PK\x01\x02", b"PK\x05\x06")):
         raise EvidenceError("PREPENDED_ZIP_RECORDS")
