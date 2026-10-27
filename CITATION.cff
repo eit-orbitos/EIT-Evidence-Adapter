@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite EIT Analyzer Lambda — Evidence Adapter when using this software."
+type: software
+title: "EIT Analyzer Lambda — Evidence Adapter"
+version: "0.2.3"
+authors:
+  - family-names: Mladenovski
+    given-names: Toni
+    affiliation: EITNetworks LLC
+    orcid: "https://orcid.org/0009-0009-8343-662X"
+license: PolyForm-Noncommercial-1.0.0
+abstract: "Standalone bounded local evidence reader. File integrity is not origin authentication, run certification or scientific validation. This is supplementary software, not a new version of Analyzer V4.2.1."

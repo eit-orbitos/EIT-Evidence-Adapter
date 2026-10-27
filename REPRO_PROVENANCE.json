@@ -1,0 +1,48 @@
+{
+  "source_archive_sha256": "a10f67d5ffbd573920be969fd21711123023be3a595bbf2401b003ba64e04f36",
+  "authentication": "supplied archive hash verified; reviewer identity not independently authenticated",
+  "files": {
+    "R_surrogate_key.json": {
+      "bytes": 12,
+      "sha256": "02724f63cc02840d4a3eaa7063b83466eb5a385438138fdbdd235c86874d8ff7",
+      "source": "CLAUDE_V5C_021_RELEASE_REVIEW_NEEDS_FIX.zip/repro/R_surrogate_key.json"
+    },
+    "R_ValueError.zip": {
+      "bytes": 2235,
+      "sha256": "04e9fc1dca53353d4479af6b4f497346ee4131f3e9cee175294827efeaec803d",
+      "source": "CLAUDE_V5C_021_RELEASE_REVIEW_NEEDS_FIX.zip/repro/R_ValueError.zip"
+    },
+    "R_UnicodeDecodeError_name.zip": {
+      "bytes": 111,
+      "sha256": "37a1ff636fa53968fd7b06539aaaaf9fe00bfacd7d18497318b6e20678beb77f",
+      "source": "CLAUDE_V5C_021_RELEASE_REVIEW_NEEDS_FIX.zip/repro/R_UnicodeDecodeError_name.zip"
+    },
+    "good.json": {
+      "bytes": 11,
+      "sha256": "4062edaf750fb8074e7e83e0c9028c94e32468a8b6f1614774328ef045150f93",
+      "source": "CLAUDE_V5C_021_RELEASE_REVIEW_NEEDS_FIX.zip/repro/good.json"
+    },
+    "R_dir_with_payload.zip": {
+      "bytes": 499,
+      "sha256": "419d798180cdc63de5beafa572e9c2dd6a7deac3edb9b7628cbf8c9d452a5eac",
+      "source": "CLAUDE_V5C_021_RELEASE_REVIEW_NEEDS_FIX.zip/repro/R_dir_with_payload.zip"
+    },
+    "R_error.zip": {
+      "bytes": 2235,
+      "sha256": "8ce0fcb313d4e63004ab6b4d36f3c753c881b9bc9f625bd5af7d78efa2324677",
+      "source": "CLAUDE_V5C_021_RELEASE_REVIEW_NEEDS_FIX.zip/repro/R_error.zip"
+    },
+    "R_truncated_declared_size.zip": {
+      "bytes": 124,
+      "sha256": "1b24780b9cc758d44795928b25912103a0df17d2a34eebe25cb944d79965e987",
+      "source": "CLAUDE_V5C_021_RELEASE_REVIEW_NEEDS_FIX.zip/repro/R_truncated_declared_size.zip"
+    }
+  },
+  "supplementary_v023_claude_counterexample": {
+    "path": "tests/security_v023/D01_double_archive_comment.zip",
+    "sha256": "42992f5fe29dfcca7ca4cc04c3e51b36829b297d1015f1f32cecabfef584f801",
+    "origin": "Claude V0.2.2 independent review; independently supplied case D01",
+    "purpose": "P2-NEW-01 reproduction and regression, retained exact original bytes",
+    "authorship_note": "Reviewer provided the counterexample at author request; provenance is attributed, not signature authenticated"
+  }
+}

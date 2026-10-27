@@ -1,0 +1,278 @@
+{
+  "oracle_version": "0.2",
+  "scope": "44 new supplemental cases; frozen 32-case V0.1 remains separate, unchanged",
+  "test_file_sha256": "50b9f8810431c643e199ab0ca799c0c1a668ef82c643856a3f27410133e30e50",
+  "frozen_before_candidate_patch": true,
+  "runtime_observed": false,
+  "cases": [
+    {
+      "id": "X01",
+      "test": "test_X01_corrupt_deflate",
+      "predeclared_expectation": "X01: corrupt DEFLATE rejects with UNREADABLE_ZIP.",
+      "source_line": 70
+    },
+    {
+      "id": "X02",
+      "test": "test_X02_bad_offsets",
+      "predeclared_expectation": "X02: invalid header offsets reject with UNREADABLE_ZIP.",
+      "source_line": 74
+    },
+    {
+      "id": "X03",
+      "test": "test_X03_bad_utf8_name",
+      "predeclared_expectation": "X03: invalid UTF-8 member name rejects with UNREADABLE_ZIP.",
+      "source_line": 78
+    },
+    {
+      "id": "X04",
+      "test": "test_X04_stored_prefix_false_acceptance",
+      "predeclared_expectation": "X04: stored size/prefix forgery rejects with ZIP_SIZE_MISMATCH.",
+      "source_line": 82
+    },
+    {
+      "id": "X05",
+      "test": "test_X05_surrogate_key",
+      "predeclared_expectation": "X05: a lone surrogate key rejects with JSON_INVALID_UNICODE.",
+      "source_line": 86
+    },
+    {
+      "id": "X06",
+      "test": "test_X06_surrogate_value",
+      "predeclared_expectation": "X06: nested lone surrogate value rejects with JSON_INVALID_UNICODE.",
+      "source_line": 91
+    },
+    {
+      "id": "X07",
+      "test": "test_X07_hidden_directory_payload",
+      "predeclared_expectation": "X07: directory payload rejects with INVALID_ZIP_DIRECTORY.",
+      "source_line": 96
+    },
+    {
+      "id": "X08",
+      "test": "test_X08_bad_member_does_not_lose_batch",
+      "predeclared_expectation": "X08: good input survives all six hostile inputs; complete BLOCKED report.",
+      "source_line": 100
+    },
+    {
+      "id": "X09",
+      "test": "test_X09_cli_complete_report",
+      "predeclared_expectation": "X09: hostile batch CLI returns 2 with a valid report and no traceback.",
+      "source_line": 109
+    },
+    {
+      "id": "X10",
+      "test": "test_X10_integer_limit_independent_of_host_setting",
+      "predeclared_expectation": "X10: 4300 digits accepted and 4301/4400 rejected under host limits 0/640/4300.",
+      "source_line": 118
+    },
+    {
+      "id": "X11",
+      "test": "test_X11_global_integer_setting_unchanged",
+      "predeclared_expectation": "X11: parsing never mutates process-global integer conversion limits.",
+      "source_line": 135
+    },
+    {
+      "id": "X12",
+      "test": "test_X12_deflate_prefix_false_acceptance",
+      "predeclared_expectation": "X12: complete DEFLATE output longer than declared size is rejected.",
+      "source_line": 142
+    },
+    {
+      "id": "X13",
+      "test": "test_X13_deflate_truncated_stream",
+      "predeclared_expectation": "X13: incomplete DEFLATE stream rejects even with a complete declared prefix.",
+      "source_line": 146
+    },
+    {
+      "id": "X14",
+      "test": "test_X14_deflate_trailing_data",
+      "predeclared_expectation": "X14: unused data inside declared compressed span rejects.",
+      "source_line": 151
+    },
+    {
+      "id": "X15",
+      "test": "test_X15_concatenated_deflate_streams",
+      "predeclared_expectation": "X15: concatenated streams are not one ZIP member.",
+      "source_line": 156
+    },
+    {
+      "id": "X16",
+      "test": "test_X16_local_size_mismatch",
+      "predeclared_expectation": "X16: non-descriptor local/central size mismatch rejects.",
+      "source_line": 161
+    },
+    {
+      "id": "X17",
+      "test": "test_X17_local_crc_mismatch",
+      "predeclared_expectation": "X17: non-descriptor local/central CRC mismatch rejects.",
+      "source_line": 165
+    },
+    {
+      "id": "X18",
+      "test": "test_X18_local_flags_mismatch",
+      "predeclared_expectation": "X18: local/central flags mismatch rejects.",
+      "source_line": 169
+    },
+    {
+      "id": "X19",
+      "test": "test_X19_signed_descriptor",
+      "predeclared_expectation": "X19: valid signed data descriptor accepted and complete hash checked.",
+      "source_line": 174
+    },
+    {
+      "id": "X20",
+      "test": "test_X20_unsigned_descriptor",
+      "predeclared_expectation": "X20: valid unsigned data descriptor accepted.",
+      "source_line": 179
+    },
+    {
+      "id": "X21",
+      "test": "test_X21_descriptor_mismatch",
+      "predeclared_expectation": "X21: data descriptor CRC mismatch rejects.",
+      "source_line": 184
+    },
+    {
+      "id": "X22",
+      "test": "test_X22_descriptor_missing",
+      "predeclared_expectation": "X22: bit-3 without required descriptor rejects.",
+      "source_line": 189
+    },
+    {
+      "id": "X23",
+      "test": "test_X23_duplicate_local_offset",
+      "predeclared_expectation": "X23: duplicate/overlapping local offsets reject.",
+      "source_line": 193
+    },
+    {
+      "id": "X24",
+      "test": "test_X24_prepended_bytes_disclosed",
+      "predeclared_expectation": "X24: prepended bytes explicitly counted; never executed.",
+      "source_line": 200
+    },
+    {
+      "id": "X25",
+      "test": "test_X25_unaccounted_member_gap",
+      "predeclared_expectation": "X25: gap between last member and central directory is rejected.",
+      "source_line": 207
+    },
+    {
+      "id": "X26",
+      "test": "test_X26_source_payload_not_executed_or_extracted",
+      "predeclared_expectation": "X26: executable member cannot create sentinel and is fully inventoried.",
+      "source_line": 213
+    },
+    {
+      "id": "X27",
+      "test": "test_X27_forged_authentication_and_gate_claims_not_promoted",
+      "predeclared_expectation": "X27: self-asserted signatures, all-PASS gates and matching hash never promote trust.",
+      "source_line": 222
+    },
+    {
+      "id": "X28",
+      "test": "test_X28_empty_directory",
+      "predeclared_expectation": "X28: empty stored directory accepted, explicitly counted, no hidden payload.",
+      "source_line": 235
+    },
+    {
+      "id": "X29",
+      "test": "test_X29_regular_stored",
+      "predeclared_expectation": "X29: full stored payload size, digest and CRC verified.",
+      "source_line": 240
+    },
+    {
+      "id": "X30",
+      "test": "test_X30_regular_deflate",
+      "predeclared_expectation": "X30: full deflate payload size, digest and CRC verified.",
+      "source_line": 245
+    },
+    {
+      "id": "X31",
+      "test": "test_X31_preflight_entry_limit",
+      "predeclared_expectation": "X31: central entry limit is rejected before metadata reader allocation.",
+      "source_line": 250
+    },
+    {
+      "id": "X32",
+      "test": "test_X32_internal_failure_is_not_expected_rejection",
+      "predeclared_expectation": "X32: unexpected per-input failure is BLOCKED INTERNAL_ERROR, later row survives.",
+      "source_line": 256
+    },
+    {
+      "id": "X33",
+      "test": "test_X33_archive_comment",
+      "predeclared_expectation": "X33: normal archive comment accepted without inspecting as a member.",
+      "source_line": 271
+    },
+    {
+      "id": "X34",
+      "test": "test_X34_compressed_directory_is_out_of_profile",
+      "predeclared_expectation": "X34: compressed empty directory is rejected under zero-compressed-byte directory policy.",
+      "source_line": 276
+    },
+    {
+      "id": "X35",
+      "test": "test_X35_zip64_is_explicitly_unsupported",
+      "predeclared_expectation": "X35: forced local ZIP64 is rejected rather than silently misparsed.",
+      "source_line": 280
+    },
+    {
+      "id": "X36",
+      "test": "test_X36_nul_name_not_silently_truncated",
+      "predeclared_expectation": "X36: NUL in original filename rejects before ZipInfo truncation can hide it.",
+      "source_line": 287
+    },
+    {
+      "id": "X37",
+      "test": "test_X37_encrypted_member",
+      "predeclared_expectation": "X37: encrypted flag remains an explicit unsupported member rejection.",
+      "source_line": 291
+    },
+    {
+      "id": "X38",
+      "test": "test_X38_valid_unicode_pair",
+      "predeclared_expectation": "X38: legitimate supplementary Unicode scalar remains accepted.",
+      "source_line": 295
+    },
+    {
+      "id": "X39",
+      "test": "test_X39_local_name_mismatch",
+      "predeclared_expectation": "X39: central and local names must match exactly.",
+      "source_line": 299
+    },
+    {
+      "id": "X40",
+      "test": "test_X40_limit_checked_on_bytes_actually_read",
+      "predeclared_expectation": "X40: direct oversized ZIP input is rejected before directory parsing.",
+      "source_line": 304
+    },
+    {
+      "id": "X41",
+      "test": "test_X41_os_filename_unicode_cannot_break_report",
+      "predeclared_expectation": "X41: unencodable POSIX filename is safely escaped in JSON report.",
+      "source_line": 308
+    },
+    {
+      "id": "X42",
+      "test": "test_X42_symlink_and_fifo_refused",
+      "predeclared_expectation": "X42: symlink and FIFO inputs refused without following/blocking on them.",
+      "source_line": 316
+    },
+    {
+      "id": "X43",
+      "test": "test_X43_content_validation_scope_explicit",
+      "predeclared_expectation": "X43: invalid nested JSON is byte-inventoried, never reported as JSON validated.",
+      "source_line": 325
+    },
+    {
+      "id": "X44",
+      "test": "test_X44_status_snapshot_date_and_scope",
+      "predeclared_expectation": "X44: historical governance constants are dated and not live/authoritative.",
+      "source_line": 331
+    }
+  ],
+  "notes": [
+    "Preparer-authored. Not independently approved.",
+    "Expected outcomes are code assertions in the exact pinned test file.",
+    "New explicit profile boundaries include no ZIP64, no empty deflated directories, no hidden record gaps."
+  ]
+}

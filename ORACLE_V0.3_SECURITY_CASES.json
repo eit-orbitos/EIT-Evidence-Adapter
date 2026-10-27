@@ -1,0 +1,66 @@
+{
+  "oracle_version": "0.3",
+  "scope": "nine new v0.2.3 security/policy regression cases in new file; frozen v0.1 (32) and v0.2 (44) untouched",
+  "target_finding": "CLAUDE P2-NEW-01 and N22-03",
+  "test_file_sha256": "33c93a812c483a906e031983c6614db243aba25e41072847518d079b05ea4b58",
+  "oracle_creation_class": "LOCAL_PREPARER_SUPPLEMENTARY_EXPECTATIONS_WITH_FIXTURE_PATH_CORRECTION_AFTER_FIRST_RUN",
+  "expectations_created_before_source_patch": false,
+  "external_timestamp_proof": false,
+  "cases": [
+    {
+      "id": "Y01",
+      "test": "test_Y01_claude_D01_double_archive_rejected",
+      "expected_behavior": "Y01: exactly supplied Claude D01 double archive is rejected.",
+      "source_line": 29
+    },
+    {
+      "id": "Y02",
+      "test": "test_Y02_local_header_signature_prefix_rejected",
+      "expected_behavior": "Y02: a prepended local ZIP signature is fail-closed.",
+      "source_line": 33
+    },
+    {
+      "id": "Y03",
+      "test": "test_Y03_benign_prefix_retained",
+      "expected_behavior": "Y03: previously allowed unambiguous prefix remains admitted/disclosed.",
+      "source_line": 37
+    },
+    {
+      "id": "Y04",
+      "test": "test_Y04_unprefixed_regular_zip_retained",
+      "expected_behavior": "Y04: ordinary archive is still inventoried.",
+      "source_line": 44
+    },
+    {
+      "id": "Y05",
+      "test": "test_Y05_mixed_batch_does_not_lose_good_input",
+      "expected_behavior": "Y05: malicious double ZIP row is BLOCKED but good row remains INSPECTED.",
+      "source_line": 50
+    },
+    {
+      "id": "Y06",
+      "test": "test_Y06_excessive_cli_inputs_controlled_usage",
+      "expected_behavior": "Y06: CLI >1000 paths returns usage exit 2, not traceback.",
+      "source_line": 61
+    },
+    {
+      "id": "Y07",
+      "test": "test_Y07_central_directory_signature_prefix_rejected",
+      "expected_behavior": "Y07: a prepended central directory signature is rejected.",
+      "source_line": 72
+    },
+    {
+      "id": "Y08",
+      "test": "test_Y08_eocd_signature_prefix_rejected",
+      "expected_behavior": "Y08: a prepended EOCD signature is rejected.",
+      "source_line": 76
+    },
+    {
+      "id": "Y09",
+      "test": "test_Y09_archive_comments_still_accepted",
+      "expected_behavior": "Y09: trailing ordinary archive comments remain accepted.",
+      "source_line": 80
+    }
+  ],
+  "test_file_change_note": "Fixture moved out of shared tests/repro directory after first run to keep frozen X08 7-row expectation unchanged; Y01-Y09 expected outcomes NOT changed. This source/test hash was frozen after source patch, not claimed preregistered in advance."
+}
