@@ -8,6 +8,8 @@ import tempfile
 from pathlib import Path
 import unittest
 import zipfile
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import evidence_adapter as m
 
 D01 = Path(__file__).resolve().parent / 'security_v023' / 'D01_double_archive_comment.zip'
@@ -85,6 +87,14 @@ class PrependRecordRegression(unittest.TestCase):
             z.comment=b'ordinary comment'
         result=m.inspect_zip(out.getvalue())
         self.assertEqual(result['member_count'],1)
+
+class Zip64LocatorReasonCode(unittest.TestCase):
+    def test_Y10_zip64_locator_reports_unsupported_zip64(self):
+        """Synthetic ZIP64 locator prefix must not be mislabeled as prepended ZIP records."""
+        raw = b"PK\x06\x07" + plain_zip()
+        with self.assertRaises(m.EvidenceError) as ctx:
+            m.inspect_zip(raw)
+        self.assertEqual(str(ctx.exception), "UNSUPPORTED_ZIP64")
 
 if __name__ == '__main__':
     unittest.main()
